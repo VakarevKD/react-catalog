@@ -1,0 +1,66 @@
+html {
+	font-size: 10px;
+}
+
+body {
+	font-family: 'Roboto', sans-serif;
+	color: $main-text-color;
+	@include text(1.4rem, 400, 1.6rem);
+	margin: 1.6rem 0 9.6rem;
+
+	@media (max-width: 500px) {
+		margin-bottom: 2.4rem;
+	}
+}
+
+button {
+	cursor: pointer;
+	padding: 0;
+	border: none;
+	background-color: transparent;
+}
+
+ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+a {
+	text-decoration: none;
+}
+
+p {
+	margin: 0;
+}
+
+.wrapper {
+	width: 140rem;
+	margin-left: auto;
+	margin-right: auto;
+
+	@media (max-width: 500px) {
+		width: 32.7rem;
+	}
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+	-webkit-appearance: none;
+	margin: 0;
+}
+
+input[type="number"] {
+	-moz-appearance: textfield;
+}
+
+input[type="number"]:hover,
+input[type="number"]:focus {
+	-moz-appearance: number-input;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+	-webkit-appearance: none;
+	margin: 0;
+}

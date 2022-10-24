@@ -1,0 +1,78 @@
+@import "../../scss/mixins.scss";
+@import "../../scss/variables.scss";
+
+.product_count_box {
+	margin-right: 1.6rem;
+	display: flex;
+	width: 18rem;
+	height: 4rem;
+	border: 0.1rem solid #323232;
+
+	@media (max-width: 500px) {
+		width: 14rem;
+		margin: 1.6rem 2.5rem 0 0;
+	}
+}
+
+.product_count {
+	padding: 0 0 0 4.5rem;
+	width: 5.5rem;
+	height: 4rem;
+	@include text(2.4rem, 400, 2.8rem);
+	border: none;
+
+	@media (max-width: 500px) {
+		padding-left: 2.5rem;
+		width: 3.5rem;
+	}
+}
+
+.product_count:focus {
+	outline: none;
+}
+
+.count_button {
+	display: block;
+	width: 4rem;
+	height: 4rem;
+}
+
+.count_minus {
+	position: relative;
+	border-right: 0.1rem solid #323232;
+}
+
+.count_minus:after {
+	content: '';
+	position: absolute;
+	width: 1.4rem;
+	height: 0.2rem;
+	background-color: $interactive-color;
+	top: 1.9rem;
+	left: 1.3rem;
+}
+
+.count_plus {
+	position: relative;
+	border-left: 0.1rem solid #323232;
+}
+
+.count_plus:after {
+	content: '';
+	position: absolute;
+	width: 1.4rem;
+	height: 0.2rem;
+	background-color: $interactive-color;
+	top: 1.9rem;
+	left: 1.3rem;
+}
+
+.count_plus:before {
+	content: '';
+	position: absolute;
+	width: 0.2rem;
+	height: 1.4rem;
+	background-color: $interactive-color;
+	top: 1.3rem;
+	left: 1.9rem;
+}

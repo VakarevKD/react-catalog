@@ -1,0 +1,39 @@
+@import "../../scss/variables.scss";
+@import "../../scss/mixins.scss";
+
+.product {
+	position: relative;
+	&:hover {
+		background: #F2F2F2;
+		box-shadow: 2px 2px 5px #00000026;
+		border-radius: 10px;
+	}
+}
+
+.product_link {
+	display: block;
+	width: 22rem;
+	height: 27.2rem;
+	text-align: center;
+
+	@media (max-width: 500px) {
+		width: 15.5rem;
+	}
+}
+
+.product_img {
+	margin: 7rem 8rem 3.8rem;
+
+	@media (max-width: 500px) {
+		margin: 71px 50px 38px 46px;
+	}
+}
+
+.product_title {
+	color: $second-text-color;
+	@include text(1.8rem, 400, 4rem);
+}
+
+.product_price {
+	color: #545454;
+}

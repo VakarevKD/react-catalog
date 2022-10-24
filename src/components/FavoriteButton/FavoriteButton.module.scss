@@ -1,0 +1,25 @@
+.favorite_button {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 2.4rem;
+	height: 2.4rem;
+
+	&_catalog {
+		position: absolute;
+		right: 0.8rem;
+		top: 0.8rem;
+	}
+
+	&_disable {
+		fill: none;
+	}
+
+	@media (max-width: 500px) {
+		&_detailed {
+			position: absolute;
+			top: 1.3rem;
+			right: 0;
+		}
+	}
+}
