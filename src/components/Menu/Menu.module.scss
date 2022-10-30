@@ -1,20 +1,20 @@
 @import "../../scss/variables.scss";
 
-.menu_box {
+.menu {
 	display: flex;
 	justify-content: space-between;
-	width: 64px;
-}
+	width: 6.4rem;
 
-.menu_button {
-	width: 24px;
-	height: 24px;
-}
+	&__button {
+		width: 2.4rem;
+		height: 2.4rem;
 
-.menu_icon {
-	transition: 800ms;
-}
+		&:hover .menu__icon {
+			fill: $interactive-color;
+		}
+	}
 
-.menu_button:hover .menu_icon {
-	fill: $interactive-color;
+	&__icon {
+		transition: 800ms;
+	}
 }

@@ -1,25 +1,17 @@
-.favorite_button {
+@import "../../scss/variables.scss";
+
+.favorite {
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	width: 2.4rem;
 	height: 2.4rem;
 
-	&_catalog {
-		position: absolute;
-		right: 0.8rem;
-		top: 0.8rem;
-	}
-
-	&_disable {
+	& svg path:nth-child(2) {
 		fill: none;
 	}
 
-	@media (max-width: 500px) {
-		&_detailed {
-			position: absolute;
-			top: 1.3rem;
-			right: 0;
-		}
+	&_active svg path:nth-child(2){
+		fill: $interactive-color;
 	}
 }

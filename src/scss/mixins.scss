@@ -1,8 +1,0 @@
-@mixin text($font-size, $font-weight, $line-heigth) {
-	font: {
-		size: $font-size;
-		weight: $font-weight;	
-	}
-
-	line-height: $line-heigth;
-}
