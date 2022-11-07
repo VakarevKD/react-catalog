@@ -1,8 +1,8 @@
-import React from "react";
 import { Link } from "react-router-dom";
-import style from "./ProductCard.module.scss";
+import { Paper } from "@mui/material";
 import { FavoriteButton } from "../FavoriteButton/FavoriteButton";
-import { IProduct } from "../../models/models";
+import { IProduct } from "../../types/IProduct";
+import style from "./ProductCard.module.scss";
 
 interface ProductProps {
 	product: IProduct
@@ -10,13 +10,17 @@ interface ProductProps {
 
 export const ProductCard = ({ product }: ProductProps) => {
 	return (
-		<li className={ style.product }>
+		<Paper
+			className={style.product}
+			sx={{ width: 220, height: 272 }}
+			elevation={0}
+		>
 			<FavoriteButton favorite={ product.favorite } />
-			<Link className={ style.product__link } to={ `product/${product.id}` }>
-				<img className={ style.product__img } src={ product.img } width="59" height="79" alt={ product.name } />
-				<p className={ style.product__title }>{ product.name }</p>
-				<p className={ style.product__price }>${ product.price }</p>
+			<Link to={ `product/${ product.id }` }>
+				<img src={ product.img } alt={ product.name } width="59" height="79" />
+				<p>{ product.name }</p>
+				<p>${ product.price }</p>
 			</Link>
-		</li>
+		</Paper>
 	)
 }

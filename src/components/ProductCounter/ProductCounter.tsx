@@ -1,16 +1,27 @@
-import React from "react";
+import { useState } from "react";
 import style from "./ProductCounter.module.scss";
 
 export const ProductCounter = () => {
+	const [value, setValue] = useState('1');
+
+	const decrementValue = (value: any) => {
+		if (value > 1) value--;
+		setValue(value);
+	}
+	const incrementValue = (value: any) => {
+		value++;
+		setValue(value);
+	}
+
 	return (
-		<div className={ style.count} >
-			<button 
-				className={`${style.count__button} ${style.count__minus}`}
+		<div className={ style.counter} >
+			<button onClick={(event: any) => decrementValue(value)}/>
+			<input 
+				type="number"	
+				value={value}
+				onChange={(e) => setValue(e.target.value)}
 			/>
-			<input type="number" className={ style.count__value } defaultValue="1" />
-			<button 
-				className={`${style.count__button} ${style.count__plus}`}
-			/>
+			<button onClick={(event: any) => incrementValue(value)}/>
 		</div>
 	)
 }

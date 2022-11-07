@@ -5,16 +5,16 @@
 	justify-content: space-between;
 	width: 6.4rem;
 
-	&__button {
+	button {
 		width: 2.4rem;
 		height: 2.4rem;
 
-		&:hover .menu__icon {
+		&:hover svg path {
 			fill: $interactive-color;
 		}
 	}
 
-	&__icon {
+	svg path {
 		transition: 800ms;
 	}
 }

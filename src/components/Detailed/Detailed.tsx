@@ -1,7 +1,8 @@
-import React, { useEffect, useState } from "react";
+import { Typography } from "@mui/material";
+import { useEffect, useState } from "react";
+import axios from "axios";
 import { useParams } from "react-router-dom";
-import axios from "../../axios";
-import { IProduct } from "../../models/models";
+import { IProduct } from "../../types/IProduct";
 import { FavoriteButton } from "../FavoriteButton/FavoriteButton";
 import { ProductCounter } from "../ProductCounter/ProductCounter";
 import style from "./Detailed.module.scss";
@@ -11,7 +12,7 @@ export const Detailed = () => {
 	const [product, setProduct] = useState<IProduct | null>(null);
 
 	async function getProduct() {
-		const response = await axios.get<IProduct>(`catalog/${id}`);
+		const response = await axios.get<IProduct>(`https://634fa403df22c2af7b55c0ff.mockapi.io/catalog/${id}`);
 		setProduct(response.data);
 	}
 
@@ -20,22 +21,26 @@ export const Detailed = () => {
 	}, [])
 
 	return (
-		<main className={ `${style.detailed } wrapper`}>
+		<div className={ style.detailed }>
 			<div className={ style.detailed__img }>
-				<img src={ product?.img_detailed } width="150" height="200" alt="Product" />
+				<img src={ product?.img_detailed } width="150" height="200" alt={ product?.name } />
 			</div>
 			<div className={ style.product }>
-				<p className={ style.product__title }>{ product?.name }</p>
-				<p className={ style.product__description }>{ product?.description }</p>
-				<p className={ style.product__details_title }>Details</p>
-				<p className={ style.product__details }>{ product?.details }</p>
-				<div className={ style.product__add }>
-					<span className={ style.product__price }>${ product?.price }</span>
+				<Typography sx={{ marginBottom: "1.6rem", fontSize: "2.4rem", fontWeight: 700, lineHeight: "2.8rem" }}>
+					{ product?.name }
+				</Typography>
+				<p>{ product?.description }</p>
+				<Typography sx={{ marginBottom: "1.6rem", fontSize: "1.8rem", fontWeight: 700, lineHeight: "2.1rem" }}>
+					Details
+				</Typography>
+				<p>{ product?.details }</p>
+				<div>
+					<span>${ product?.price }</span>
 					<ProductCounter />
-					<button className={ style.product__add_button }>Add to cart</button>
+					<button className={ style.product__add }>Add to cart</button>
 					<FavoriteButton favorite={ product?.favorite } />
 				</div>
 			</div>
-		</main>
+		</div>
 	)
 }
