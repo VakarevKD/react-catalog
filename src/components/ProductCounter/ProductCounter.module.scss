@@ -1,0 +1,78 @@
+@import "../../scss/variables.scss";
+
+.counter {
+	display: flex;
+	margin-right: 1.6rem;
+	width: 18rem;
+	height: 4rem;
+	border: 0.1rem solid rgb(50, 50, 50);
+
+	@media (max-width: 500px) {
+		width: 14rem;
+		margin: 1.6rem 2.5rem 0 0;
+	}
+
+	input {
+		width: 5.5rem;
+		height: 4rem;
+		padding: 0 0 0 4.5rem;
+		font-size: 2.4rem;
+		line-height: 2.8rem;
+		border: none;
+
+		&:focus {
+			outline: none;
+		}
+
+		@media (max-width: 500px) {
+			width: 3.5rem;
+			padding-left: 2.5rem;
+		}
+	}
+
+	button {
+		display: block;
+		width: 4rem;
+		height: 4rem;
+	}
+
+	button:nth-child(1) {
+		position: relative;
+		border-right: 0.1rem solid #323232;
+
+		&:after {
+			content: '';
+			position: absolute;
+			width: 1.4rem;
+			height: 0.2rem;
+			background-color: $interactive-color;
+			top: 1.9rem;
+			left: 1.3rem;
+		}
+	}
+
+	button:nth-child(3) {
+		position: relative;
+		border-left: 0.1rem solid #323232;
+
+		&:after {
+			content: '';
+			position: absolute;
+			width: 1.4rem;
+			height: 0.2rem;
+			background-color: $interactive-color;
+			top: 1.9rem;
+			left: 1.3rem;
+		}
+
+		&:before {
+			content: '';
+			position: absolute;
+			width: 0.2rem;
+			height: 1.4rem;
+			background-color: $interactive-color;
+			top: 1.3rem;
+			left: 1.9rem;
+		}
+	}
+}

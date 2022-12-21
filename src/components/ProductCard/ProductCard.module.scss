@@ -1,0 +1,46 @@
+@import "../../scss/variables.scss";
+
+.product {
+	position: relative;
+
+	&:hover {
+		background: #F2F2F2;
+		box-shadow: 2px 2px 5px #00000026;
+		border-radius: 10px;
+	}
+
+	button {
+		position: absolute;
+		right: 0.8rem;
+		top: 0.8rem;
+	}
+
+	a {
+		display: block;
+		width: 22rem;
+		height: 27.2rem;
+		text-align: center;
+
+		@media (max-width: 500px) {
+			width: 15.5rem;
+		}
+
+		p:first-of-type {
+			color: $second-text-color;
+			font-size: 1.8rem;
+			line-height: 4rem;
+		}
+
+		p:last-of-type {
+			color: rgb(84, 84, 84);
+		}
+	}
+
+	img {
+		margin: 7rem 8rem 3.8rem;
+
+		@media (max-width: 500px) {
+			margin: 7.1rem 5rem 3.8rem 4.6rem;
+		}
+	}
+}

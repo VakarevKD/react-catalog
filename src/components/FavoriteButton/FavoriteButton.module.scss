@@ -1,0 +1,17 @@
+@import "../../scss/variables.scss";
+
+.favorite {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 2.4rem;
+	height: 2.4rem;
+
+	& svg path:nth-child(2) {
+		fill: none;
+	}
+
+	&_active svg path:nth-child(2){
+		fill: $interactive-color;
+	}
+}

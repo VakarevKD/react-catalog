@@ -1,0 +1,20 @@
+@import "../../scss/variables.scss";
+
+.menu {
+	display: flex;
+	justify-content: space-between;
+	width: 6.4rem;
+
+	button {
+		width: 2.4rem;
+		height: 2.4rem;
+
+		&:hover svg path {
+			fill: $interactive-color;
+		}
+	}
+
+	svg path {
+		transition: 800ms;
+	}
+}
